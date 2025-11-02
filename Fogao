@@ -1,0 +1,70 @@
+public class Fogao {
+    private int numeroBocas;
+    private String tipo;
+    private String cor;
+    private boolean temForno;
+    private int temperaturaForno;
+    private boolean[] bocaAcesa;
+
+    public Fogao(int numeroBocas, String tipo, String cor, boolean temForno) {
+        this.numeroBocas = numeroBocas;
+        this.tipo = tipo;
+        this.cor = cor;
+        this.temForno = temForno;
+        this.temperaturaForno = 0;
+        this.bocaAcesa = new boolean[numeroBocas];
+    }
+
+    public void acenderBoca(int numeroBoca) {
+        if (numeroBoca >= 0 && numeroBoca < numeroBocas) {
+            bocaAcesa[numeroBoca] = true;
+            System.out.println("Boca " + (numeroBoca + 1) + " acesa");
+        } else {
+            System.out.println("Número de boca inválido");
+        }
+    }
+
+    public void apagarBoca(int numeroBoca) {
+        if (numeroBoca >= 0 && numeroBoca < numeroBocas) {
+            bocaAcesa[numeroBoca] = false;
+            System.out.println("Boca " + (numeroBoca + 1) + " apagada");
+        } else {
+            System.out.println("Número de boca inválido");
+        }
+    }
+
+    public void preaquecerForno(int temperatura) {
+        if (temForno) {
+            temperaturaForno = temperatura;
+            System.out.println("Forno pré-aquecendo a " + temperatura + "°C");
+        } else {
+            System.out.println("Este fogão não tem forno");
+        }
+    }
+
+    public void regularFluxoGas(int intensidade) {
+        if (tipo.equals("gás")) {
+            System.out.println("Fluxo de gás regulado para intensidade: " + intensidade);
+        } else {
+            System.out.println("Este fogão não é a gás");
+        }
+    }
+
+    public void limpar() {
+        for (int i = 0; i < numeroBocas; i++) {
+            bocaAcesa[i] = false;
+        }
+        temperaturaForno = 0;
+        System.out.println("Fogão limpo e desligado");
+    }
+
+    // Getters e Setters
+    public int getNumeroBocas() { return numeroBocas; }
+    public String getTipo() { return tipo; }
+    public String getCor() { return cor; }
+    public boolean isTemForno() { return temForno; }
+    public int getTemperaturaForno() { return temperaturaForno; }
+    public boolean isBocaAcesa(int numeroBoca) { 
+        return numeroBoca >= 0 && numeroBoca < numeroBocas ? bocaAcesa[numeroBoca] : false; 
+    }
+}
