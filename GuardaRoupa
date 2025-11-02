@@ -1,0 +1,47 @@
+public class GuardaRoupa {
+    private int numeroPortas;
+    private int numeroPrateleiras;
+    private String material;
+    private String cor;
+    private boolean temEspelho;
+    private int capacidade;
+
+    public GuardaRoupa(int numeroPortas, int numeroPrateleiras, String material, String cor, boolean temEspelho) {
+        this.numeroPortas = numeroPortas;
+        this.numeroPrateleiras = numeroPrateleiras;
+        this.material = material;
+        this.cor = cor;
+        this.temEspelho = temEspelho;
+        this.capacidade = numeroPrateleiras * 10;
+    }
+
+    public void abrirPorta() {
+        System.out.println("Porta do guarda-roupa aberta");
+    }
+
+    public void fecharPorta() {
+        System.out.println("Porta do guarda-roupa fechada");
+    }
+
+    public void organizarRoupas() {
+        System.out.println("Roupas organizadas no guarda-roupa");
+    }
+
+    public void adicionarGaveta() {
+        numeroPrateleiras++;
+        capacidade += 10;
+        System.out.println("Gaveta adicionada. Capacidade total: " + capacidade);
+    }
+
+    public void limpar() {
+        System.out.println("Guarda-roupa limpo");
+    }
+
+    // Getters e Setters
+    public int getNumeroPortas() { return numeroPortas; }
+    public int getNumeroPrateleiras() { return numeroPrateleiras; }
+    public String getMaterial() { return material; }
+    public String getCor() { return cor; }
+    public boolean isTemEspelho() { return temEspelho; }
+    public int getCapacidade() { return capacidade; }
+}
