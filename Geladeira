@@ -1,0 +1,55 @@
+public class Geladeira {
+    private int capacidadeLitros;
+    private String cor;
+    private int numeroPortas;
+    private int temperaturaFreezer;
+    private int temperaturaGeladeira;
+    private boolean temDispenserDeAgua;
+
+    public Geladeira(int capacidadeLitros, String cor, int numeroPortas, boolean temDispenserDeAgua) {
+        this.capacidadeLitros = capacidadeLitros;
+        this.cor = cor;
+        this.numeroPortas = numeroPortas;
+        this.temDispenserDeAgua = temDispenserDeAgua;
+        this.temperaturaFreezer = -18;
+        this.temperaturaGeladeira = 4;
+    }
+
+    public void ajustarTemperatura(int novaTemp) {
+        if (novaTemp >= 2 && novaTemp <= 8) {
+            temperaturaGeladeira = novaTemp;
+            temperaturaFreezer = novaTemp - 22;
+            System.out.println("Temperatura ajustada: Geladeira=" + temperaturaGeladeira + "°C, Freezer=" + temperaturaFreezer + "°C");
+        } else {
+            System.out.println("Temperatura inválida para geladeira");
+        }
+    }
+
+    public void abrirPorta() {
+        System.out.println("Porta da geladeira aberta");
+    }
+
+    public void fecharPorta() {
+        System.out.println("Porta da geladeira fechada");
+    }
+
+    public void gelarAlimentos() {
+        System.out.println("Alimentos sendo gelados na temperatura: " + temperaturaGeladeira + "°C");
+    }
+
+    public void fazerGelo() {
+        if (temperaturaFreezer <= -10) {
+            System.out.println("Fazendo gelo no freezer");
+        } else {
+            System.out.println("Abaixe a temperatura do freezer para fazer gelo");
+        }
+    }
+
+    // Getters e Setters
+    public int getCapacidadeLitros() { return capacidadeLitros; }
+    public String getCor() { return cor; }
+    public int getNumeroPortas() { return numeroPortas; }
+    public int getTemperaturaFreezer() { return temperaturaFreezer; }
+    public int getTemperaturaGeladeira() { return temperaturaGeladeira; }
+    public boolean isTemDispenserDeAgua() { return temDispenserDeAgua; }
+}
