@@ -1,0 +1,77 @@
+public class atv1 {
+    public static void main(String[] args) {
+
+        System.out.println("1. CANETA ESFEROGRÁFICA:");
+        CanetaEsferografica caneta = new CanetaEsferografica("Azul", 0.7, "Bic");
+        caneta.destampar();
+        caneta.escrever("Olá, mundo!");
+        caneta.verificarTinta();
+        caneta.tampar();
+        System.out.println();
+
+        System.out.println("2. VENTILADOR:");
+        Ventilador ventilador = new Ventilador(3, "Branco", true);
+        ventilador.ligar();
+        ventilador.aumentarVelocidade();
+        ventilador.iniciarOscilacao();
+        System.out.println();
+
+        System.out.println("3. GUARDA-CHUVA:");
+        GuardaChuva guardaChuva = new GuardaChuva("Preto", "Nylon", 8, false);
+        guardaChuva.abrir();
+        guardaChuva.protegerDaChuva();
+        guardaChuva.fechar();
+        System.out.println();
+
+        System.out.println("4. MICRO-ONDAS:");
+        Microondas microondas = new Microondas(800, true, "Inox");
+        microondas.fecharPorta();
+        microondas.trancarPorta();
+        microondas.ligar(60);
+        microondas.iniciarAquecimento();
+        System.out.println();
+
+        System.out.println("5. GARRAFA TÉRMICA:");
+        GarrafaTermica garrafa = new GarrafaTermica(1.0, "Prata", "Aço Inox", true);
+        garrafa.encher("Água");
+        garrafa.setTemperaturaConteudo("quente");
+        garrafa.manterTemperatura();
+        System.out.println();
+
+        System.out.println("6. DESPERTADOR:");
+        Despertador despertador = new Despertador("07:00");
+        despertador.configurarAlarme("07:00");
+        despertador.ajustarHora("07:00");
+        despertador.simularAlarme();
+        despertador.soneca();
+        System.out.println();
+
+        System.out.println("7. GUARDA-ROUPA:");
+        GuardaRoupa guardaRoupa = new GuardaRoupa(2, 3, "Madeira", "Marrom", true);
+        guardaRoupa.abrirPorta();
+        guardaRoupa.organizarRoupas();
+        guardaRoupa.adicionarGaveta();
+        System.out.println();
+
+        System.out.println("8. GELADEIRA:");
+        Geladeira geladeira = new Geladeira(350, "Inox", 2, true);
+        geladeira.ajustarTemperatura(5);
+        geladeira.gelarAlimentos();
+        geladeira.fazerGelo();
+        System.out.println();
+
+        System.out.println("9. FOGÃO:");
+        Fogao fogao = new Fogao(4, "gás", "Branco", true);
+        fogao.acenderBoca(0);
+        fogao.preaquecerForno(180);
+        fogao.regularFluxoGas(5);
+        System.out.println();
+
+        System.out.println("10. MOCHILA:");
+        Mochila mochila = new Mochila(30, 3, "Azul", "Nylon", false);
+        mochila.adicionarItem("Caderno");
+        mochila.adicionarItem("Livro");
+        mochila.ajustarAlcas();
+        System.out.println();
+    }
+}
