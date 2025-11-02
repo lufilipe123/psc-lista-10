@@ -1,0 +1,57 @@
+public class Mochila {
+    private int capacidadeLitros;
+    private int numeroCompartimentos;
+    private String cor;
+    private String material;
+    private boolean temAlcaDeRodinhas;
+    private double pesoAtual;
+
+    public Mochila(int capacidadeLitros, int numeroCompartimentos, String cor, String material, boolean temAlcaDeRodinhas) {
+        this.capacidadeLitros = capacidadeLitros;
+        this.numeroCompartimentos = numeroCompartimentos;
+        this.cor = cor;
+        this.material = material;
+        this.temAlcaDeRodinhas = temAlcaDeRodinhas;
+        this.pesoAtual = 0;
+    }
+
+    public void adicionarItem(String item) {
+        double pesoItem = item.length() * 0.1;
+        if (pesoAtual + pesoItem <= capacidadeLitros * 0.5) {
+            pesoAtual += pesoItem;
+            System.out.println("Item '" + item + "' adicionado. Peso atual: " + pesoAtual + "kg");
+        } else {
+            System.out.println("Capacidade máxima atingida. Não é possível adicionar mais itens");
+        }
+    }
+
+    public void removerItem(String item) {
+        double pesoItem = item.length() * 0.1;
+        if (pesoAtual - pesoItem >= 0) {
+            pesoAtual -= pesoItem;
+            System.out.println("Item '" + item + "' removido. Peso atual: " + pesoAtual + "kg");
+        } else {
+            System.out.println("Peso não pode ser negativo");
+        }
+    }
+
+    public void ajustarAlcas() {
+        System.out.println("Alças ajustadas para conforto");
+    }
+
+    public void abrirZiper() {
+        System.out.println("Zíper aberto");
+    }
+
+    public void fecharZiper() {
+        System.out.println("Zíper fechado");
+    }
+
+    // Getters e Setters
+    public int getCapacidadeLitros() { return capacidadeLitros; }
+    public int getNumeroCompartimentos() { return numeroCompartimentos; }
+    public String getCor() { return cor; }
+    public String getMaterial() { return material; }
+    public boolean isTemAlcaDeRodinhas() { return temAlcaDeRodinhas; }
+    public double getPesoAtual() { return pesoAtual; }
+}
