@@ -1,0 +1,52 @@
+public class CanetaEsferografica {
+    private String corTinta;
+    private double espessuraPonta;
+    private String marca;
+    private boolean comTampa;
+    private int tintaDisponivel;
+
+    public CanetaEsferografica(String corTinta, double espessuraPonta, String marca) {
+        this.corTinta = corTinta;
+        this.espessuraPonta = espessuraPonta;
+        this.marca = marca;
+        this.comTampa = true;
+        this.tintaDisponivel = 100;
+    }
+
+    public void escrever(String texto) {
+        if (!comTampa && tintaDisponivel > 0) {
+            int tintaUsada = texto.length();
+            if (tintaUsada <= tintaDisponivel) {
+                tintaDisponivel -= tintaUsada;
+                System.out.println("Escrevendo: " + texto);
+            } else {
+                System.out.println("Tinta insuficiente para escrever todo o texto");
+            }
+        } else if (comTampa) {
+            System.out.println("Destampe a caneta antes de escrever");
+        } else {
+            System.out.println("Caneta sem tinta");
+        }
+    }
+
+    public void tampar() {
+        this.comTampa = true;
+        System.out.println("Caneta tampada");
+    }
+
+    public void destampar() {
+        this.comTampa = false;
+        System.out.println("Caneta destampada");
+    }
+
+    public void verificarTinta() {
+        System.out.println("Tinta disponível: " + tintaDisponivel + "%");
+    }
+
+    // Getters e Setters
+    public String getCorTinta() { return corTinta; }
+    public double getEspessuraPonta() { return espessuraPonta; }
+    public String getMarca() { return marca; }
+    public boolean isComTampa() { return comTampa; }
+    public int getTintaDisponivel() { return tintaDisponivel; }
+}
