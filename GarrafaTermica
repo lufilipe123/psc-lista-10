@@ -1,0 +1,59 @@
+public class GarrafaTermica {
+    private double capacidade;
+    private String cor;
+    private String material;
+    private String temperaturaConteudo;
+    private boolean tampaRosqueada;
+    private boolean isolamentoTermico;
+
+    public GarrafaTermica(double capacidade, String cor, String material, boolean tampaRosqueada) {
+        this.capacidade = capacidade;
+        this.cor = cor;
+        this.material = material;
+        this.tampaRosqueada = tampaRosqueada;
+        this.isolamentoTermico = true;
+        this.temperaturaConteudo = "vazia";
+    }
+
+    public void encher(String liquido) {
+        if (temperaturaConteudo.equals("vazia")) {
+            temperaturaConteudo = "ambiente";
+            System.out.println("Garrafa preenchida com " + liquido);
+        } else {
+            System.out.println("Garrafa já contém líquido");
+        }
+    }
+
+    public void esvaziar() {
+        temperaturaConteudo = "vazia";
+        System.out.println("Garrafa esvaziada");
+    }
+
+    public void abrirTampa() {
+        System.out.println("Tampa aberta");
+    }
+
+    public void fecharTampa() {
+        System.out.println("Tampa fechada");
+    }
+
+    public void manterTemperatura() {
+        if (!temperaturaConteudo.equals("vazia")) {
+            System.out.println("Mantendo temperatura do conteúdo: " + temperaturaConteudo);
+        } else {
+            System.out.println("Garrafa vazia");
+        }
+    }
+
+    public void setTemperaturaConteudo(String temperatura) {
+        this.temperaturaConteudo = temperatura;
+    }
+
+    // Getters e Setters
+    public double getCapacidade() { return capacidade; }
+    public String getCor() { return cor; }
+    public String getMaterial() { return material; }
+    public String getTemperaturaConteudo() { return temperaturaConteudo; }
+    public boolean isTampaRosqueada() { return tampaRosqueada; }
+    public boolean isIsolamentoTermico() { return isolamentoTermico; }
+}
