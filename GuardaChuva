@@ -1,0 +1,56 @@
+public class GuardaChuva {
+    private String cor;
+    private String material;
+    private int numeroHastes;
+    private boolean estaAberto;
+    private boolean ehAutomatico;
+
+    public GuardaChuva(String cor, String material, int numeroHastes, boolean ehAutomatico) {
+        this.cor = cor;
+        this.material = material;
+        this.numeroHastes = numeroHastes;
+        this.ehAutomatico = ehAutomatico;
+        this.estaAberto = false;
+    }
+
+    public void abrir() {
+        if (!estaAberto) {
+            estaAberto = true;
+            System.out.println("Guarda-chuva aberto");
+        } else {
+            System.out.println("Guarda-chuva já está aberto");
+        }
+    }
+
+    public void fechar() {
+        if (estaAberto) {
+            estaAberto = false;
+            System.out.println("Guarda-chuva fechado");
+        } else {
+            System.out.println("Guarda-chuva já está fechado");
+        }
+    }
+
+    public void protegerDaChuva() {
+        if (estaAberto) {
+            System.out.println("Protegendo da chuva");
+        } else {
+            System.out.println("Abra o guarda-chuva primeiro");
+        }
+    }
+
+    public void secar() {
+        if (!estaAberto) {
+            System.out.println("Guarda-chuva seco");
+        } else {
+            System.out.println("Feche o guarda-chuva para secar");
+        }
+    }
+
+    // Getters e Setters
+    public String getCor() { return cor; }
+    public String getMaterial() { return material; }
+    public int getNumeroHastes() { return numeroHastes; }
+    public boolean isEstaAberto() { return estaAberto; }
+    public boolean isEhAutomatico() { return ehAutomatico; }
+}
