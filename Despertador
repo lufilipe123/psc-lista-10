@@ -1,0 +1,63 @@
+public class Despertador {
+    private String horaAtual;
+    private String alarmeConfigurado;
+    private int volumeAlarme;
+    private String modo;
+    private boolean estaTocando;
+
+    public Despertador(String horaInicial) {
+        this.horaAtual = horaInicial;
+        this.modo = "12h";
+        this.volumeAlarme = 5;
+        this.estaTocando = false;
+        this.alarmeConfigurado = null;
+    }
+
+    public void configurarAlarme(String hora) {
+        this.alarmeConfigurado = hora;
+        System.out.println("Alarme configurado para: " + hora);
+    }
+
+    public void desligarAlarme() {
+        if (estaTocando) {
+            estaTocando = false;
+            System.out.println("Alarme desligado");
+        }
+    }
+
+    public void soneca() {
+        if (estaTocando) {
+            estaTocando = false;
+            System.out.println("Soneca ativada - alarme tocará em 5 minutos");
+        }
+    }
+
+    public void ajustarHora(String novaHora) {
+        this.horaAtual = novaHora;
+        System.out.println("Hora ajustada para: " + novaHora);
+    }
+
+    public void trocarModo() {
+        if (modo.equals("12h")) {
+            modo = "24h";
+        } else {
+            modo = "12h";
+        }
+        System.out.println("Modo alterado para: " + modo);
+    }
+
+    public void simularAlarme() {
+        if (alarmeConfigurado != null && alarmeConfigurado.equals(horaAtual)) {
+            estaTocando = true;
+            System.out.println("ALARME TOCANDO!");
+        }
+    }
+
+    // Getters e Setters
+    public String getHoraAtual() { return horaAtual; }
+    public String getAlarmeConfigurado() { return alarmeConfigurado; }
+    public int getVolumeAlarme() { return volumeAlarme; }
+    public String getModo() { return modo; }
+    public boolean isEstaTocando() { return estaTocando; }
+    public void setVolumeAlarme(int volume) { this.volumeAlarme = volume; }
+}
