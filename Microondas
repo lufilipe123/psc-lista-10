@@ -1,0 +1,58 @@
+public class Microondas {
+    private int potencia;
+    private int tempoCozimento;
+    private boolean temGradeGiratoria;
+    private String cor;
+    private boolean portaTrancada;
+
+    public Microondas(int potencia, boolean temGradeGiratoria, String cor) {
+        this.potencia = potencia;
+        this.temGradeGiratoria = temGradeGiratoria;
+        this.cor = cor;
+        this.portaTrancada = false;
+        this.tempoCozimento = 0;
+    }
+
+    public void ligar(int tempo) {
+        if (portaTrancada) {
+            this.tempoCozimento = tempo;
+            System.out.println("Microondas ligado por " + tempo + " segundos");
+        } else {
+            System.out.println("Feche e tranque a porta primeiro");
+        }
+    }
+
+    public void desligar() {
+        tempoCozimento = 0;
+        System.out.println("Microondas desligado");
+    }
+
+    public void abrirPorta() {
+        portaTrancada = false;
+        System.out.println("Porta aberta");
+    }
+
+    public void fecharPorta() {
+        System.out.println("Porta fechada");
+    }
+
+    public void trancarPorta() {
+        portaTrancada = true;
+        System.out.println("Porta trancada");
+    }
+
+    public void iniciarAquecimento() {
+        if (portaTrancada && tempoCozimento > 0) {
+            System.out.println("Iniciando aquecimento por " + tempoCozimento + " segundos");
+        } else {
+            System.out.println("Configure o tempo e tranque a porta primeiro");
+        }
+    }
+
+    // Getters e Setters
+    public int getPotencia() { return potencia; }
+    public int getTempoCozimento() { return tempoCozimento; }
+    public boolean isTemGradeGiratoria() { return temGradeGiratoria; }
+    public String getCor() { return cor; }
+    public boolean isPortaTrancada() { return portaTrancada; }
+}
